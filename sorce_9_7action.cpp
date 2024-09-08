@@ -1,9 +1,7 @@
-//cÓïÑÔ³õÊ¼»¯Ë³Ğò±í
-/*
+//cè¯­è¨€åˆå§‹åŒ–é¡ºåºè¡¨
 #include<stdio.h>
 #include<stdlib.h>
 #define MAXSIZE 100
-
 typedef struct sd
 {
 	int age;
@@ -15,8 +13,7 @@ typedef struct sq
 	int length;
 }sqList;
 sqList L;
-
-int InitList(sqList* L)//´«µİµÄÊÇµØÖ·£¬ËùÒÔÓÃÖ¸ÕëÀ´½ÓÊÕ
+int InitList(sqList* L)//ä¼ é€’çš„æ˜¯åœ°å€ï¼Œæ‰€ä»¥ç”¨æŒ‡é’ˆæ¥æ¥æ”¶
 {
 	L->data = (student*)malloc(sizeof(student) * MAXSIZE);
 	if (L->data == NULL)
@@ -28,12 +25,12 @@ int InitList(sqList* L)//´«µİµÄÊÇµØÖ·£¬ËùÒÔÓÃÖ¸ÕëÀ´½ÓÊÕ
 }
 int main()
 {
-	InitList(&L);//ÔÚ C ÓïÑÔÖĞ£¬Èç¹ûÄãÏëÒªº¯ÊıÄÜ¹»ĞŞ¸Äº¯ÊıÍâ²¿¶¨ÒåµÄ±äÁ¿µÄÖµ£¬Äã±ØĞëÍ¨¹ıÖ¸ÕëÀ´´«µİÕâ¸ö±äÁ¿µÄµØÖ·¡£Õâ¾ÍÊÇÎªÊ²Ã´ÔÚ C ÓïÑÔÖĞµ÷ÓÃ InitList Ê±ĞèÒª´«µİ &L µÄÔ­Òò¡£
+	InitList(&L);//åœ¨ C è¯­è¨€ä¸­ï¼Œå¦‚æœä½ æƒ³è¦å‡½æ•°èƒ½å¤Ÿä¿®æ”¹å‡½æ•°å¤–éƒ¨å®šä¹‰çš„å˜é‡çš„å€¼ï¼Œä½ å¿…é¡»é€šè¿‡æŒ‡é’ˆæ¥ä¼ é€’è¿™ä¸ªå˜é‡çš„åœ°å€ã€‚è¿™å°±æ˜¯ä¸ºä»€ä¹ˆåœ¨ C è¯­è¨€ä¸­è°ƒç”¨ InitList æ—¶éœ€è¦ä¼ é€’ &L çš„åŸå› ã€‚
 	return 0;
 }
-*/
 
-//c++ÖĞ³õÊ¼»¯Ë³Ğò±í
+
+//c++ä¸­åˆå§‹åŒ–é¡ºåºè¡¨
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 #include<cstdlib>
@@ -51,21 +48,20 @@ typedef struct sq
 	int length;
 }sqList;
 sqList L;
-
-int InitList(sqList& L)//ÕâÀïµÄ&ÊÇÒıÓÃ£¬ÔÚº¯ÊıÄÚ²¿¶Ô±íµÄ²Ù×÷»áÖ±½Ó¸Ä±ä±í±¾Éí£»
+int InitList(sqList& L)//è¿™é‡Œçš„&æ˜¯å¼•ç”¨ï¼Œåœ¨å‡½æ•°å†…éƒ¨å¯¹è¡¨çš„æ“ä½œä¼šç›´æ¥æ”¹å˜è¡¨æœ¬èº«ï¼›
 {
 	L.data = new student;
-	if (L.data == nullptr)//nullptrÓëNULLµÈ¼Û£¬Ö»ÊÇc++ÖĞÓÃ
+	if (L.data == nullptr)//nullpträ¸NULLç­‰ä»·ï¼Œåªæ˜¯c++ä¸­ç”¨
 	{
-		exit(-1);//ÍË³ö³ÌĞòº¯Êı
+		exit(-1);//é€€å‡ºç¨‹åºå‡½æ•°
 	}
 	L.length = 0;
 	return 0;
 }
 int main()
 {
-	InitList(L);//ÔÚc++ÖĞµ÷ÓÃ³õÊ¶»¯º¯ÊıÊ±ÊÇÖ±½Ó´«L¹ıÈ¥µÄ£¬ÓëcÓïÑÔ²»Í¬
-				//c++ÖĞÒ²¿ÉÒÔÓÃInitList£¨&L£©´«µİÅäint InitList(sqList *L)À´²Ù×÷£¬µ«ÊÇ²»°²È«
+	InitList(L);//åœ¨c++ä¸­è°ƒç”¨åˆè¯†åŒ–å‡½æ•°æ—¶æ˜¯ç›´æ¥ä¼ Lè¿‡å»çš„ï¼Œä¸cè¯­è¨€ä¸åŒ
+				//c++ä¸­ä¹Ÿå¯ä»¥ç”¨InitListï¼ˆ&Lï¼‰ä¼ é€’é…int InitList(sqList *L)æ¥æ“ä½œï¼Œä½†æ˜¯ä¸å®‰å…¨
 	return 0;
 }
 

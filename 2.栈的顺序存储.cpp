@@ -1,4 +1,4 @@
-/*
+
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -19,7 +19,7 @@ int initStack(ArrayStack stack) {
 }
 
 int pushStack(ArrayStack stack, E element) {
-	if (stack->top + 1 == stack->capacity) { //ջ�����ݣ�top�Ǵ�0��ʼ�Ƶģ���capascity�Ǵ�1��ʼ��
+	if (stack->top + 1 == stack->capacity) { //栈满扩容（top是从0开始计的，而capascity是从1开始）
 		int newcapacity = stack->capacity + (stack->capacity >> 2);
 		E* newarray = (E*)realloc(stack->array, sizeof(E) * newcapacity);
 		if (newarray == NULL)	return 0;
@@ -32,16 +32,16 @@ int pushStack(ArrayStack stack, E element) {
 	return 1;
 }
 
-int isEmpty(ArrayStack stack) { //�п�
+int isEmpty(ArrayStack stack) { //判空
 	return stack->top == -1;
 }
 
-E popStack(ArrayStack stack) {  //����ջ��Ԫ��
+E popStack(ArrayStack stack) {  //返回栈顶元素
 	return stack->array[stack->top--];
 }
 
 void printStack(ArrayStack stack) {
-	for (int i = 0; i < stack->top + 1; i++) {//top��ֱ��ָ��ջ��Ԫ�أ�����Ҫע��
+	for (int i = 0; i < stack->top + 1; i++) {//top是直接指向栈顶元素，所以要注意
 		printf("%d  ", stack->array[i]);
 	}
 	printf("\n");
@@ -62,8 +62,3 @@ int main() {
 
 
 
-
-
-
-
-*/
